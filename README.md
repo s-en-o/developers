@@ -15,8 +15,8 @@ The prefix for web resource endpoints is `https://catalogue.data.govt.nz/api/act
 
 |Resource Functions | Description |
 |---|---|
-|`/package_metadata_show?id={package id}`|Gets the metadata of a dataset and all of its data resources. All of the data resources' download link, last updated date, etc. can be retrieved here.|
-|`/resource_metadata_show?id={resource id}`|Gets the metadata of a specific data resource. This function is a subset of `package_metadata_show` as it would have listed all of its data resources. The data resource download link, last updated date, etc. can be retrieved here.|
+|`/package_show?id={package id}`|Gets the metadata of a dataset and all of its data resources. All of the data resources' download link, last updated date, etc. can be retrieved here.|
+|`/resource_show?id={resource id}`|Gets the metadata of a specific data resource. This function is a subset of `package_metadata_show` as it would have listed all of its data resources. The data resource download link, last updated date, etc. can be retrieved here.|
 
 [CKAN provides full API documentation](http://docs.ckan.org/en/latest/api/index.html) with further endpoints and actions that can be called.
 
@@ -29,7 +29,7 @@ Code examples to get started are provided below (feel free to suggest further co
 
  - Identify the appropriate web resource method to use: package_metadata_show
  - Identify the dataset you want and retrieve it's ID, for instance: new-zealand-public-sector-websites
- - Create POST HTTP call to: `https://catalogue.data.govt.nz/api/action/package_metadata_show?id=new-zealand-public-sector-websites`.
+ - Create POST HTTP call to: `https://catalogue.data.govt.nz/api/action/package_show?id=new-zealand-public-sector-websites`.
  - You will receive a JSON response containing the metadata for this dataset. After parsing the JSON response into an object, check if the request was successful by ensuring that the `response-json-object.success` value evaluates to true before proceeding.
 
 The following example shows how you can use Python to retrieve dataset information from the site:
